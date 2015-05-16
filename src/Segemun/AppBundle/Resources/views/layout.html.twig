@@ -1,0 +1,62 @@
+{# src/Segemun/AppBundle/Resources/views/layout.html.twig #}
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+        <title>Be Pro - Bootstrap Admin Template</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        {% block styles %}
+            <link rel="stylesheet" href="{{ asset('bundles/segemunapp/css/styles.css') }}" />
+        {% endblock %}
+        
+        {% block javascripts %}
+            <script src="{{ asset('bundles/segemunapp/js/plugins/jquery/jquery.min.js') }}"></script>
+            <script src="{{ asset('bundles/segemunapp/js/plugins/jquery/jquery-ui.min.js') }}"></script>
+            <script src="{{ asset('bundles/segemunapp/js/plugins/bootstrap/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('bundles/segemunapp/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js') }}"></script>
+            <script src="{{ asset('bundles/segemunapp/js/plugins.js') }}"></script>
+            <script src="{{ asset('bundles/segemunapp/js/actions.js') }}"></script>
+        {% endblock %}
+    </head>
+    <body>
+        <div class="page-container">
+            <div class="page-head"> 
+                <ul class="page-head-elements">
+                    <li><a href="#" class="page-navigation-toggle"><span class="fa fa-bars"></span></a></li>
+                    <li class="search">
+                        <input type="text" class="form-control" placeholder="Search..."/>
+                    </li>
+                </ul>
+                <ul class="page-head-elements pull-right">
+                    <li><a href="{{path('fos_user_security_logout')}}"><span class="fa fa-ban"></span></a></li>
+                </ul> 
+            </div>
+            
+            <div class="page-navigation">
+                <div class="page-navigation-info">
+                    <a href="/" class="logo">Gemini</a>
+                </div>
+                {{ knp_menu_render('SegemunAppBundle:Builder:mainMenu', {'template': 'SegemunAppBundle:Default:knp_menu.html.twig'}) }}
+            </div>
+            
+            <div class="page-content">
+                <div class="container">
+                    <div class="page-toolbar">
+                        <div class="page-toolbar-block">
+                            <div class="page-toolbar-title">Dashboard</div>
+                            <div class="page-toolbar-subtitle">BE PRO - BOOTSTRAP ADMIN TEMPLATE</div>
+                        </div>                     
+                        <ul class="breadcrumb">
+                                <li><a href="#">Dashboard</a></li>
+                                <li><a href="#">Forms</a></li>
+                                <li class="active">Elements</li>
+                        </ul> 
+                    </div>                    
+                </div>    
+            </div>
+            <div class="page-sidebar"></div>
+        </div>
+    </body>
+</html>

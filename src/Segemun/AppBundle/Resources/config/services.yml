@@ -1,0 +1,4 @@
+services:
+#    segemun_app.example:
+#        class: Segemun\AppBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

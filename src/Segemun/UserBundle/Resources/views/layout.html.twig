@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+        <title>Be Pro - Bootstrap Admin Template</title>    
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% block styles %}
+            <link rel="stylesheet" href="{{ asset('bundles/segemunapp/css/styles.css') }}" />
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('bundles/segemunapp/js/plugins/jquery/jquery.min.js') }}"></script>
+            <script src="{{ asset('bundles/segemunapp/js/plugins/jquery/jquery-ui.min.js') }}"></script>
+            <script src="{{ asset('bundles/segemunapp/js/plugins/bootstrap/bootstrap.min.js') }}"></script>
+        {% endblock %}
+        
+    </head>
+    <body>
+
+        {% for type, messages in app.session.flashBag.all %}
+            {% for message in messages %}
+                <div class="{{ type }}">
+                    {{ message|trans({}, 'FOSUserBundle') }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        <div>
+        </div>
+        <div class="page-container">    
+            <div class="page-content page-content-default">
+                {% block fos_user_content %}
+                {% endblock fos_user_content %}
+            </div>
+        </div>
+        
+    </body>
+</html>

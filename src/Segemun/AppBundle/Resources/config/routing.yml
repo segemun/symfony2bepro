@@ -1,0 +1,6 @@
+segemun_app_homepage:
+    path:     /
+    defaults: { _controller: SegemunAppBundle:Dashboard:index }
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"    
